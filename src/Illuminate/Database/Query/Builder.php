@@ -2378,6 +2378,17 @@ class Builder
     }
 
     /**
+     * Get the query grammar instance.
+     *
+     * @param array $columns
+     * @return mixed|static
+     */
+    public function getRandomRow($columns = ['*'])
+    {
+        return $this->inRandomOrder()->limit(1)->first($columns);
+    }
+
+    /**
      * Use the write pdo for query.
      *
      * @return $this
